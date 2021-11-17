@@ -1,9 +1,13 @@
 package at.jul.projects.array;
 
+import java.io.InputStream;
+import java.util.Scanner;
+
 public class TicTacToe {
     public static void main(String[] args){
         char[][] playgroundTicTacToe= new char[3][3];
-
+        Scanner scanner = new Scanner(System.in);
+        int inputGame = scanner.nextInt();
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 playgroundTicTacToe[i][j] = playgroundTicTacToe[i][j];
@@ -24,6 +28,7 @@ public class TicTacToe {
                 }
             }
         }
+        System.out.println(inputGame);
     }
 
     private static void printLineForPlayground(char c) {
