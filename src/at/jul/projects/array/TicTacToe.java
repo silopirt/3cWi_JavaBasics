@@ -40,7 +40,7 @@ public class TicTacToe {
                         output += "|  ";
                     }
                 }
-                gameEnd = isGameEnd(gameEnd, output);
+
                 System.out.println(output);
             }
             if(gameEnd == false){
@@ -49,16 +49,13 @@ public class TicTacToe {
             }
         }
     }
+    private static boolean chechIfWinner(int[][] field){
+        for (int row = 0; row < 3; row++) {
+            if(field[row][0] == field[row][1] && field[row][1]==field[row][2]){
 
-    private static boolean isGameEnd(boolean gameEnd, String output) {
-        switch (output) {
-            case "xxx":
-                gameEnd = false;
-                break;
-            case "ooo":
-                gameEnd = false;
-                break;
+            }
+
         }
-        return gameEnd;
+        return true;
     }
 }
