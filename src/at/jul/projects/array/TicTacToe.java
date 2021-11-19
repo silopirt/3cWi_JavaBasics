@@ -14,6 +14,7 @@ public class TicTacToe {
     private static void printField(int[][] field) {
         Scanner scanner = new Scanner(System.in);
         for (int i = 0; i < 9; i++) {
+            boolean gameEnd = true;
             System.out.println("Geben sie 1 für Spieler 1 und 2 für Spieler 2 ein");
             int inputPlayer = scanner.nextInt();
 
@@ -39,16 +40,25 @@ public class TicTacToe {
                         output += "|  ";
                     }
                 }
-                    switch (output) {
-                        case "xxx":
-                            System.out.println("Spieler 1 hat gewonnen");
-                            break;
-                        case "ooo":
-                            System.out.println("Spieler 2 hat gewonnen");
-                            break;
-                    }
+                gameEnd = isGameEnd(gameEnd, output);
                 System.out.println(output);
             }
+            if(gameEnd == false){
+                System.out.println("Das Spiel ist beendet");
+                break;
+            }
         }
+    }
+
+    private static boolean isGameEnd(boolean gameEnd, String output) {
+        switch (output) {
+            case "xxx":
+                gameEnd = false;
+                break;
+            case "ooo":
+                gameEnd = false;
+                break;
+        }
+        return gameEnd;
     }
 }
