@@ -1,5 +1,4 @@
 package at.jul.projects.array;
-
 import java.io.InputStream;
 import java.util.Scanner;
 
@@ -49,12 +48,17 @@ public class TicTacToe {
             }
         }
     }
-    private static boolean chechIfWinner(int[][] field){
+    private static boolean checkIfWinner(int[][] field){
         for (int row = 0; row < 3; row++) {
             if(field[row][0] == field[row][1] && field[row][1]==field[row][2]){
 
             }
+            for (int col = 0; col < 3; col++) {
+                if(field[0][col]== field[1][col] && field[1][col]==field[2][col]){
 
+                }
+
+            }
         }
         return true;
     }
