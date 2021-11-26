@@ -80,7 +80,7 @@ public class TicTacToe {
         }
         else{
             System.out.println("Geben sie einen validen Wert ein.");
-            checkInput(inputToCheck, printOutLine);
+            inputToCheck = checkInput(inputToCheck, printOutLine);
         }
         return inputToCheck;
     }
