@@ -12,24 +12,19 @@ public class TicTacToe {
     }
 
     private static void printField(int[][] field) {
-        Scanner scanner = new Scanner(System.in);
+
         for (int i = 0; i < 9; i++) {
             boolean gameEnd = false;
 
             int inputPlayer = 0;
+            String inputPlayerString = "Geben sie 1 für Spieler 1 und 2 für Spieler 2 ein.";
             int inputRow = 0;
             int inputCol = 0;
-                try{
-                    System.out.println("Geben sie 1 für Spieler 1 und 2 für Spieler 2 ein");
-                    inputPlayer = scanner.nextInt();
+            String inputRowAndColString = "Geben sie 0,1 oder 2 ein.";
 
-                    System.out.println("Geben sie entweder 0,1 oder 2 ein für die Reihe");
-                    inputRow = scanner.nextInt();
-                    System.out.println("Geben sie entweder 0,1 oder 2 ein für die Spalte");
-                    inputCol = scanner.nextInt();
-                }catch(Exception e){
-                    System.out.println("Geben sie bitte eine Zahl ein");
-                }
+            inputPlayer = checkInput(inputPlayer, inputPlayerString);
+            inputRow = checkInput(inputRow,inputRowAndColString);
+            inputCol = checkInput(inputRow,inputRowAndColString);
 
             if (inputPlayer == 1) {
                 field[inputRow][inputCol] = 1;
@@ -73,5 +68,20 @@ public class TicTacToe {
             }
         }
         return gameEnd;
+    }
+
+
+    private static int checkInput(int inputToCheck, String printOutLine) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(printOutLine);
+
+        if(scanner.hasNextInt()){
+            inputToCheck = scanner.nextInt();
+        }
+        else{
+            System.out.println("Geben sie einen validen Wert ein.");
+            checkInput(inputToCheck, printOutLine);
+        }
+        return inputToCheck;
     }
 }
