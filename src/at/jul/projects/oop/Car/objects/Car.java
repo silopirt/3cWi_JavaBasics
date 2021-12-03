@@ -14,4 +14,23 @@ public class Car {
     public void stop(){
         System.out.println("BREAK");
     }
+
+    public void turboBoost(){
+        if(this.fuelAmount> fuelAmount *0.1){
+            System.out.println("SuperBoostMode");
+        }else{
+            System.out.println("not enough fuel for boost");
+        }
+    }
+
+    public void honk(int honkAmount){
+        for (int i = 0; i < honkAmount; i++) {
+            System.out.println("TUUT");
+        }
+    }
+
+    public void getRemainingRange(){
+        int restRange = this.fuelAmount;
+        System.out.println(restRange);
+    }
 }
