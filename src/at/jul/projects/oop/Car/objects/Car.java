@@ -6,6 +6,16 @@ public class Car {
     public int serialNumber;
     public int fuelAmount;
 
+    //Konstruktor
+    public Car(String colorConstr, int fuelConsumptionConstr, int serialNumberConstr, int fuelAmountConstr){
+        this.color = colorConstr;
+        this.fuelConsumption = fuelConsumptionConstr;
+        this.serialNumber = serialNumberConstr;
+        this.fuelAmount = fuelAmountConstr;
+    }
+
+
+    //Methoden
     public void drive(){
         this.fuelAmount = this.fuelAmount-this.fuelConsumption;
         System.out.println("I'm driving");

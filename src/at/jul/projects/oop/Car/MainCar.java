@@ -9,11 +9,7 @@ public class MainCar {
         Scanner scanner = new Scanner(System.in);
         int honkAmount = scanner.nextInt();
 
-        Car c1 = new Car();
-        c1.color = "rot";
-        c1.fuelConsumption = 3;
-        c1.fuelAmount = 20;
-        c1.serialNumber = 1234;
+        Car c1 = new Car("rot",5,1234,20);
 
         System.out.println(c1.fuelAmount);
         c1.drive();
