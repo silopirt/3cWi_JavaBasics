@@ -1,46 +1,59 @@
 package at.jul.projects.oop.Car.objects;
 
+
 public class Car {
-    public String color;
-    public int fuelConsumption;
-    public int serialNumber;
-    public int fuelAmount;
+    private String color;
+    private String serialNumber;
+
+    private int speed;
+
+    private Engine engine;
+    private Tank tank;
 
     //Konstruktor
-    public Car(String colorConstr, int fuelConsumptionConstr, int serialNumberConstr, int fuelAmountConstr){
-        this.color = colorConstr;
-        this.fuelConsumption = fuelConsumptionConstr;
-        this.serialNumber = serialNumberConstr;
-        this.fuelAmount = fuelAmountConstr;
-    }
 
+
+    public Car(Engine engine, Tank tank,String color, String serialNumber) {
+        this.engine = engine;
+        this.tank = tank;
+        this.color = color;
+        this.serialNumber = serialNumber;
+    }
 
     //Methoden
-    public void drive(){
-        this.fuelAmount = this.fuelAmount-this.fuelConsumption;
-        System.out.println("I'm driving");
+    public void drive(int horsepower){
+        this.speed = horsepower + 10;
+        System.out.println("I'm driving with this speed" + this.speed);
     }
 
-    public void stop(){
-        System.out.println("BREAK");
+
+
+    public String getColor() {
+        return color;
     }
 
-    public void turboBoost(){
-        if(this.fuelAmount> fuelAmount *0.1){
-            System.out.println("SuperBoostMode");
-        }else{
-            System.out.println("not enough fuel for boost");
-        }
+    public void setColor(String color) {
+        this.color = color;
     }
 
-    public void honk(int honkAmount){
-        for (int i = 0; i < honkAmount; i++) {
-            System.out.println("TUUT");
-        }
+    public String getSerialNumber() {
+        return serialNumber;
     }
 
-    public void getRemainingRange(){
-        int restRange = this.fuelAmount;
-        System.out.println(restRange);
+
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
+
+    public Tank getTank() {
+        return tank;
+    }
+
+    public void setTank(Tank tank) {
+        this.tank = tank;
     }
 }
