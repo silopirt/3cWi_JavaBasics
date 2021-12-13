@@ -22,9 +22,9 @@ public class TicTacToe {
             int inputCol = 0;
             String inputRowAndColString = "Geben sie 0,1 oder 2 ein.";
 
-            inputPlayer = checkInput(inputPlayer, inputPlayerString);
-            inputRow = checkInput(inputRow,inputRowAndColString);
-            inputCol = checkInput(inputRow,inputRowAndColString);
+            inputPlayer = checkInput(inputPlayerString);
+            inputRow = checkInput(inputRowAndColString);
+            inputCol = checkInput(inputRowAndColString);
 
             if (inputPlayer == 1) {
                 field[inputRow][inputCol] = 1;
@@ -71,7 +71,8 @@ public class TicTacToe {
     }
 
 
-    private static int checkInput(int inputToCheck, String printOutLine) {
+    private static int checkInput(String printOutLine) {
+        int inputToCheck = 0;
         Scanner scanner = new Scanner(System.in);
         System.out.println(printOutLine);
 
@@ -80,7 +81,7 @@ public class TicTacToe {
         }
         else{
             System.out.println("Geben sie einen validen Wert ein.");
-            inputToCheck = checkInput(inputToCheck, printOutLine);
+            inputToCheck = checkInput(printOutLine);
         }
         return inputToCheck;
     }
