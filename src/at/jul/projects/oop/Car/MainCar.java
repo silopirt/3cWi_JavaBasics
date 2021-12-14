@@ -22,10 +22,7 @@ public class MainCar {
         c2.setEngine(e2);
         c2.setTank(t2);
 
-
         c1.drive(e1.getHorsePower());
         c2.drive(e2.getHorsePower());
-
-
     }
 }
