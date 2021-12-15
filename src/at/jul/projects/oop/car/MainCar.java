@@ -1,6 +1,6 @@
-package at.jul.projects.oop.Car;
+package at.jul.projects.oop.car;
 
-import at.jul.projects.oop.Car.objects.*;
+import at.jul.projects.oop.car.objects.*;
 
 
 public class MainCar {
