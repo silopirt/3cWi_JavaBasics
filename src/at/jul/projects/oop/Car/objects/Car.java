@@ -1,6 +1,9 @@
 package at.jul.projects.oop.Car.objects;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Car {
     private String color;
     private String serialNumber;
@@ -9,11 +12,15 @@ public class Car {
 
     private Engine engine;
     private Tank tank;
+    private List<Tyres> tyres;
+    private List<RearMirror> mirrors;
 
     //Konstruktor
 
 
     public Car(Engine engine, Tank tank,String color, String serialNumber) {
+        this.tyres = new ArrayList<>();
+        this.mirrors = new ArrayList<>();
         this.engine = engine;
         this.tank = tank;
         this.color = color;
@@ -21,12 +28,26 @@ public class Car {
     }
 
     //Methoden
+    public void addRearMirror(RearMirror mirrors){
+        this.mirrors.add(mirrors);
+    }
+    public void addTyres(Tyres tyres){
+        this.tyres.add(tyres);
+    }
+
+    public List<Tyres> getTyres() {
+        return tyres;
+    }
+    public List<RearMirror> getMirrors() {
+        return mirrors;
+    }
+
+
+
     public void drive(int horsepower){
         this.speed = horsepower + 10;
         System.out.println("I'm driving with this speed" + this.speed);
     }
-
-
 
     public String getColor() {
         return color;
