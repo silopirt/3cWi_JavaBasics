@@ -1,5 +1,6 @@
 package at.jul.projects.oop.remote.objects;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,8 +8,11 @@ public class RemoteObject {
     private List<RemoteBattery> batteries;
     private int PowerStatus;
 
-    public RemoteObject(int batteryStatus) {
-        this.PowerStatus = batteryStatus;
+    public void addRemoteBattery(RemoteBattery battery){
+        this.batteries.add(battery);
+    }
+
+    public RemoteObject() {
         this.batteries = new ArrayList<>();
     }
 
@@ -26,7 +30,7 @@ public class RemoteObject {
     public int getLoadingState(){
         int statusBatteryOne=this.batteries.get(0).getBatteryStatus();
         int statusBatteryTwo = this.batteries.get(1).getBatteryStatus();
-        return;
+        return (statusBatteryOne+statusBatteryTwo)/2;
     }
 
 }
