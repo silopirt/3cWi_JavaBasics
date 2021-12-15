@@ -1,4 +1,4 @@
-package at.jul.projects.oop.Car.objects;
+package at.jul.projects.oop.car.objects;
 
 public class Tank {
     public enum TYPE {DIESEL, GAS}
