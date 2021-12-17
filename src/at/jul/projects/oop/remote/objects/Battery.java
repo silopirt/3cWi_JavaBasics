@@ -1,9 +1,9 @@
 package at.jul.projects.oop.remote.objects;
 
-public class RemoteBattery {
+public class Battery {
     private int batteryStatus;
 
-    public RemoteBattery(int batteryStatus) {
+    public Battery(int batteryStatus) {
         this.batteryStatus = batteryStatus;
     }
 
