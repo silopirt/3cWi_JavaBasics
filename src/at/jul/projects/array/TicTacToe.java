@@ -1,6 +1,4 @@
 package at.jul.projects.array;
-import javax.swing.*;
-import java.io.InputStream;
 import java.util.Scanner;
 
 public class TicTacToe {
@@ -46,7 +44,7 @@ public class TicTacToe {
                 System.out.println(output);
             }
             gameEnd = checkIfWinner(field, gameEnd);
-            if (gameEnd == true) {
+            if (gameEnd) {
                 break;
             }
         }
