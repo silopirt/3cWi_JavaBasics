@@ -12,4 +12,16 @@ public class Producer {
         this.name = name;
         this.rabatt = rabatt;
     }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getRabatt() {
+        return rabatt;
+    }
 }
