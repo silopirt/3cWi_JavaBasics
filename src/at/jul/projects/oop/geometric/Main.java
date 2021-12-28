@@ -1,10 +1,16 @@
 package at.jul.projects.oop.geometric;
 
-import at.jul.projects.oop.geometric.figures.Circle;
-import at.jul.projects.oop.geometric.figures.Figure;
+import at.jul.projects.oop.geometric.figures.*;
 
 public class Main {
     public static void main(String[] args) {
-        Circle c1 = new Circle("circle", 3);
+        Rectangle rectangleOne = new Rectangle("Rectangle",4,5);
+        Circle circleOne = new Circle("Circle", 3);
+        Cube cubeOne = new Cube("Cube",2,2,3);
+        Square squareOne = new Square("Square", 5);
+
+
+        System.out.println(rectangleOne.getArea(rectangleOne.getA(), rectangleOne.getB()));
+
     }
 }

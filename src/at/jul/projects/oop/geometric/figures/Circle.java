@@ -1,6 +1,8 @@
 package at.jul.projects.oop.geometric.figures;
 
-public class Circle extends Figure{
+import at.jul.projects.oop.geometric.Figure;
+
+public class Circle extends Figure {
     private int radius;
 
     public Circle(String nameOfFigure, int radius) {
@@ -8,8 +10,5 @@ public class Circle extends Figure{
         this.radius = radius;
     }
 
-    @Override
-    public int Area(int a, int b) {
-        return super.Area(a, b);
-    }
+
 }
