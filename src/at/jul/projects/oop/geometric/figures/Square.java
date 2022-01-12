@@ -9,4 +9,13 @@ public class Square extends Figure {
         super(nameOfFigure);
         this.a = a;
     }
+
+    @Override
+    public int getArea() {
+        return a*a;
+    }
+
+    public int getA() {
+        return a;
+    }
 }

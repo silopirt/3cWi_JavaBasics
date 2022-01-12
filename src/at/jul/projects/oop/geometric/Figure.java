@@ -11,8 +11,8 @@ public class Figure {
     public Figure(String nameOfFigure) {
         this.nameOfFigure = nameOfFigure;
     }
-    public int getArea(int a, int b){
-        int area= a*b;
-        return area;
+    public int getArea(){
+
+        return 0;
     }
 }
