@@ -13,7 +13,7 @@ public class Rectangle extends Figure {
     }
 
     @Override
-    public int getArea(int a, int b) {
+    public int getArea() {
         return a*b;
     }
 

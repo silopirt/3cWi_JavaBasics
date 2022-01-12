@@ -14,4 +14,8 @@ public class Cube extends Figure {
         this.c = c;
     }
 
+    @Override
+    public int getArea() {
+        return a*b*c;
+    }
 }
