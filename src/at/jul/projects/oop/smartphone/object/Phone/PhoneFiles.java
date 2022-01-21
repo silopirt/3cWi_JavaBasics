@@ -15,4 +15,9 @@ public class PhoneFiles {
         String output = (this.name + this.extension + " Größe: " + this.size).toString();
         return output;
     }
+
+    public int getSize() {
+        return size;
+    }
+
 }
