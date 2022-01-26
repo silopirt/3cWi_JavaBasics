@@ -9,16 +9,16 @@ public class MainPhone {
         SDCard sdCard = new SDCard(100);
 
 
-        PhoneFiles phoneFiles = new PhoneFiles("Image",".jpg",3);
-        PhoneFiles phoneFiles2 = new PhoneFiles("Image2",".jpg",3);
+        PhoneFile phoneFiles = new PhoneFile("Image",".jpg",3);
+        PhoneFile phoneFiles2 = new PhoneFile("Image2",".jpg",3);
 
         PhoneClass phoneClass = new PhoneClass("rot",sdCard);
 
-        sdCard.saveFile(phoneFiles);
-        sdCard.saveFile(phoneFiles2);
+        phoneClass.saveFile(phoneFiles);
+        phoneClass.saveFile(phoneFiles2);
 
-        phoneClass.getAllFilesInformation();
 
-        System.out.println(sdCard.getCapacity());
+        System.out.println(phoneClass.getAllFilesInformation());
+
     }
 }

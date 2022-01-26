@@ -6,16 +6,18 @@ import java.util.List;
 public class SDCard {
     private int capacity;
 
-    private List<PhoneFiles> phoneFiles;
+    private List<PhoneFile> phoneFiles;
 
     public SDCard(int capacity) {
         this.capacity = capacity;
         this.phoneFiles = new ArrayList<>();
     }
 
-    public void saveFile(PhoneFiles phoneFiles){
+    public void saveFile(PhoneFile phoneFiles){
         this.phoneFiles.add(phoneFiles);
     }
+
+
     public int getCapacity(){
         int freeSpace = this.capacity;
         for (int i = 0; i < phoneFiles.size(); i++) {
@@ -23,8 +25,7 @@ public class SDCard {
         }
         return freeSpace;
     }
-
-    public List<PhoneFiles> getPhoneFiles() {
+    public List<PhoneFile> getPhoneFiles() {
         return phoneFiles;
     }
 }

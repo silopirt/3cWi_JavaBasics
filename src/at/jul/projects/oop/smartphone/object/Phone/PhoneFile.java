@@ -1,11 +1,11 @@
 package at.jul.projects.oop.smartphone.object.Phone;
 
-public class PhoneFiles {
+public class PhoneFile {
     private String name;
     private String extension;
     private int size;
 
-    public PhoneFiles(String name, String extension, int size) {
+    public PhoneFile(String name, String extension, int size) {
         this.name = name;
         this.extension = extension;
         this.size = size;
