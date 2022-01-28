@@ -8,10 +8,14 @@ import java.util.List;
 public class PhoneClass {
 private String color;
 private SDCard sdCard;
+private SIM sim;
+private Camera camera;
 
-    public PhoneClass(String color, SDCard sdCard) {
+    public PhoneClass(String color, SDCard sdCard, SIM sim, Camera camera) {
         this.color = color;
         this.sdCard = sdCard;
+        this.sim = sim;
+        this.camera = camera;
     }
 
 
@@ -20,7 +24,7 @@ private SDCard sdCard;
 
         List newListFiles = new ArrayList<String>();
         for (int i = 0; i < informationFiles.size(); i++) {
-            newListFiles.add(informationFiles.get(0).getInfo());
+            newListFiles.add(informationFiles.get(i).getInfo());
         }
         return newListFiles;
     }
@@ -31,6 +35,14 @@ private SDCard sdCard;
 
     public void saveFile(PhoneFile phoneFile){
         sdCard.saveFile(phoneFile);
+    }
+
+    public void makeCall(String numberSim){
+        sim.makeCall(numberSim);
+    }
+
+    public void takePicture(){
+        sdCard.saveFile(camera.makePicture());
     }
 
 }
