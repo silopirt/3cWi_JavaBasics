@@ -60,18 +60,22 @@ public class Camera {
         System.out.println("Want to take another picture? 1 = YES, 2 = NO");
 
         int wantAnotherPic = scanner.nextInt();
-        if(wantAnotherPic == 1){
-            takePicture();
-        }else if(wantAnotherPic == 2){
-            System.out.println("Thank you bye!");
-        }else{
-            System.out.println("Error");
-            return;
+
+        switch (wantAnotherPic){
+            case 1:
+                takePicture();
+            case 2:
+                System.out.println("Thank you bye!");
+                return;
+            default:
+                System.out.println("Error");
+                return;
         }
     }
 
     private int sizeOfFile() {
         int sizeOfFile = 0;
+
         if(this.pixel >= 5){
             sizeOfFile = 6;
         }else if(this.pixel <5 && this.pixel >=3){
@@ -105,4 +109,9 @@ public class Camera {
     public int freeSpace(){
         return sdCard.freeSpace();
     }
+    public void getInfo(){
+        sdCard.getInfo();
+    }
 }
+
+

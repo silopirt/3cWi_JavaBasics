@@ -23,4 +23,10 @@ public class SDCard {
         }
         return freeSpace;
     }
+
+    public void getInfo(){
+        for (int i = 0; i < photoFiles.size(); i++) {
+           photoFiles.get(i).getFileInfo();
+        }
+    }
 }
