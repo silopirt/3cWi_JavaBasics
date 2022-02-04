@@ -24,6 +24,8 @@ public class MainCamera {
 
 
         cameraGoPro.takePicture();
+        System.out.println(cameraGoPro.freeSpace());
+        cameraGoPro.getInfo();
 
 
 
