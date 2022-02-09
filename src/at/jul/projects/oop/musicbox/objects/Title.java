@@ -1,13 +1,19 @@
 package at.jul.projects.oop.musicbox.objects;
 
 public class Title {
-    private final int length;
+    private String name;
+    private double length;
 
-    public Title(int length) {
+    public Title(String name, double length) {
+        this.name = name;
         this.length = length;
     }
 
-    public int getLength() {
+    public double getLength() {
         return length;
+    }
+
+    public void getInfo(){
+        System.out.println("Name: "+ name + ", Länge: "+ length);
     }
 }

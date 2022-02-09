@@ -4,53 +4,64 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Magazin {
-    private final String modelOfMag;
+    private String name;
 
-    private final List<Plates> plates;
+    private List<Plate> plates;
 
-    public Magazin(String magazinModel) {
-        this.modelOfMag = magazinModel;
 
+    public Magazin(String name) {
+        this.name = name;
         this.plates = new ArrayList<>();
     }
 
-    public void addRecord(Plates plate) {
-        if (plates.size() > 50) {
-            System.out.println("Magazin ist voll!");
-        } else {
-            this.plates.add(plate);
+    public void addRecord(Plate plate){
+        if(plates.size() > 50){
+            System.out.println("Spieler voll bitte lösche zuerst eine Platte");
+            return;
         }
+        plates.add(plate);
+    }
+    public void removeRecord(Plate plate){
+            Plate searchedPlate = searchPlate(plate);
+
+
+            plates.remove(searchedPlate);
+    }
+    public void getSumOfMusic(){
+        double sumOfMusic = 0;
+        for (int i = 0; i < plates.size(); i++) {
+            sumOfMusic +=plates.get(i).getSumOfMusic();
+        }
+        System.out.println(sumOfMusic);
     }
 
-    public void removeRecord(Plates plate) {
+    public Plate searchPlate(Plate plate){
+        if(plates.size() <= 0){
+            System.out.println("Error");
+            return null;
+        }
+        Plate plateBack = null;
         for (int i = 0; i < plates.size(); i++) {
-            if (plate.getTitleName() == plates.get(i).getTitleName()) {
-                plates.remove(i);
-            } else {
-                System.out.println("Konnte Platte nicht finden. Es wurde nichts gelöscht.");
+            if(plates.get(i).getTitle() == plate.getTitle() || plates.get(i).getId() == plate.getId()){
+                plateBack = plate;
+                return plateBack;
+            }else{
+                System.out.println("Es wurde keine Platte gefunden oder diese ist leer.");
             }
         }
+        return plateBack;
     }
 
-    public int sumOfMusic() {
-        int lengthOfMusicWhichIsPlayed = 0;
-        for (int i = 0; i < plates.size(); i++) {
-            lengthOfMusicWhichIsPlayed += plates.get(i).getLenghtOfPlate();
-        }
-        return lengthOfMusicWhichIsPlayed;
-    }
 
-    public Plates searchRecord(String search) {
+    public void getInfo(){
         for (int i = 0; i < plates.size(); i++) {
-            if (search == plates.get(i).getTitleName() || search == plates.get(i).getId()) {
-                return plates.get(i);
-            }
+            System.out.println(plates.get(i).getId() + " " + plates.get(i).getTitle());
+            plates.get(i).getPlateInfo();
         }
     }
 
-    public void playMusic(String search,int min){
-        Plates searchedPlate = searchRecord(search);
-
-        searchedPlate.
+    public int getNumberOfPlates(){
+        return plates.size();
     }
+
 }
