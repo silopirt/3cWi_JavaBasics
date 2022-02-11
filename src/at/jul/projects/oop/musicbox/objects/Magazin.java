@@ -9,61 +9,40 @@ public class Magazin {
 
     private List<Plate> plates;
 
-
     public Magazin(String name) {
         this.name = name;
         this.plates = new ArrayList<>();
     }
 
     public void addRecord(Plate plate){
-        if(plates.size() > 50){
-            System.out.println("Spieler voll bitte lösche zuerst eine Platte");
-            return;
-        }else {
-            plates.add(plate);
-        }
-    }
-    public void removeRecord(Plate plate){
-            Plate searchedPlate = searchPlate(plate);
 
+        Scanner scanner = new Scanner(System.in);
 
-            plates.remove(searchedPlate);
-    }
-    public void getSumOfMusic(){
-        double sumOfMusic = 0;
-        for (int i = 0; i < plates.size(); i++) {
-            sumOfMusic +=plates.get(i).getSumOfMusic();
-        }
-        System.out.println(sumOfMusic);
-    }
+        System.out.println("Neue Platte designen = 1; Vorhandene einsetzten = 2");
+        int desideWhichWay = scanner.nextInt();
 
-    public Plate searchPlate(Plate plate){
-        if(plates.size() <= 0){
-            System.out.println("Error");
-            return null;
-        }
-        Plate plateBack = null;
-        for (int i = 0; i < plates.size(); i++) {
-            if(plates.get(i).getTitle() == plate.getTitle() || plates.get(i).getId() == plate.getId()){
-                plateBack = plate;
-                return plateBack;
-            }else{
-                System.out.println("Es wurde keine Platte gefunden oder diese ist leer.");
+        if(desideWhichWay == 1){
+            System.out.println("Wie viele Titel hat die Platte?");
+            int amountOfTitles = scanner.nextInt();
+
+            for (int i = 0; i < amountOfTitles; i++) {
+                System.out.println("Name");
+                String nameOfTitle = scanner.next();
+                System.out.println("Länge");
+                double lenghtOfTitle = scanner.nextInt();
+                Title title = new Title(nameOfTitle,lenghtOfTitle);
+                plate.addTitle(title);
             }
+            plates.add(plate);
+        }else if (desideWhichWay == 2){
+            plates.add(plate);
+        }else{
+            System.out.println("Fehler");
+            return;
         }
-        return plateBack;
+
     }
 
 
-    public void getInfo(){
-        for (int i = 0; i < plates.size(); i++) {
-            System.out.println(plates.get(i).getId() + " " + plates.get(i).getTitle());
-            plates.get(i).getPlateInfo();
-        }
-    }
-
-    public int getNumberOfPlates(){
-        return plates.size();
-    }
 
 }
