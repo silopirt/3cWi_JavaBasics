@@ -12,19 +12,9 @@ public class MusicboxMain {
         Plate plateOne = new Plate("Music to be murdered by", "E5");
         Plate plateTwo = new Plate("jkjkj", "r2");
 
-        Magazin magazin = new Magazin("Mainplayer");
-
-        Player player = new Player(magazin);
-
-        plateOne.addTitle(titleOne);
-        plateOne.addTitle(titleTwo);
+        Magazin magazin = new Magazin("Magazin_One");
 
         magazin.addRecord(plateOne);
-        magazin.addRecord(plateTwo);
-
-        magazin.searchPlate(plateOne);
-        magazin.removeRecord(plateTwo);
-        magazin.searchPlate(plateTwo);
 
 
     }
