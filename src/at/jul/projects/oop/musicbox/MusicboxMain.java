@@ -2,6 +2,8 @@ package at.jul.projects.oop.musicbox;
 
 import at.jul.projects.oop.musicbox.objects.*;
 
+import java.util.Scanner;
+
 public class MusicboxMain {
     public static void main(String[] args) {
         Title titleOne = new Title("Godzilla", 3.3);
@@ -17,11 +19,12 @@ public class MusicboxMain {
         plateOne.addTitle(titleOne);
         plateOne.addTitle(titleTwo);
 
-
         magazin.addRecord(plateOne);
         magazin.addRecord(plateTwo);
 
-        player.play(1,plateTwo);
+        magazin.searchPlate(plateOne);
+        magazin.removeRecord(plateTwo);
+        magazin.searchPlate(plateTwo);
 
 
     }

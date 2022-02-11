@@ -2,6 +2,7 @@ package at.jul.projects.oop.musicbox.objects;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Magazin {
     private String name;
@@ -18,8 +19,9 @@ public class Magazin {
         if(plates.size() > 50){
             System.out.println("Spieler voll bitte lösche zuerst eine Platte");
             return;
+        }else {
+            plates.add(plate);
         }
-        plates.add(plate);
     }
     public void removeRecord(Plate plate){
             Plate searchedPlate = searchPlate(plate);

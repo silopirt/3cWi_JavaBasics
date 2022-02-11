@@ -11,6 +11,9 @@ private Magazin magazin;
         Plate loadedPlate = magazin.searchPlate(plate);
         return loadedPlate;
     }
+    public void addPlate(Plate plate){
+        magazin.addRecord(plate);
+    }
 
     public void play(int numberOfTitle, Plate plate){
         if(numberOfTitle> plate.numberOfTitles(plate)){
@@ -19,5 +22,17 @@ private Magazin magazin;
         }
         Plate plateToPlay = loadRecord(plate);
         plateToPlay.playPlate(numberOfTitle);
+    }
+    public void removeRec(Plate plate){
+        magazin.removeRecord(plate);
+    }
+    public void getSumOfMusic(){
+        magazin.getSumOfMusic();
+    }
+    public void getInfo(){
+        magazin.getInfo();
+    }
+    public void searchRec(Plate plate){
+        magazin.searchPlate(plate);
     }
 }
