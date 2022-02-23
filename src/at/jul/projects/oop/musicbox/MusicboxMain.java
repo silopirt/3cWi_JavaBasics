@@ -11,6 +11,7 @@ public class MusicboxMain {
 
         Plate plateOne = new Plate("Music to be murdered by", "E5");
         Plate plateTwo = new Plate("jkjkj", "r2");
+<<<<<<< HEAD
         plateOne.addTitle(titleOne);
         plateOne.addTitle(titleTwo);
         Magazin magazin = new Magazin("Magazin_One");
@@ -46,5 +47,13 @@ public class MusicboxMain {
         Plate newPlate = new Plate(name,id);
 
         return newPlate;
+=======
+
+        Magazin magazin = new Magazin("Magazin_One");
+
+        magazin.addRecord(plateOne);
+
+
+>>>>>>> 0d562d7defde7bf741225ff3d9bad34e9be03309
     }
 }

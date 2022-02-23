@@ -14,12 +14,18 @@ public class Magazin {
         this.plates = new ArrayList<>();
     }
 
+<<<<<<< HEAD
     public void addRecord(Plate plate) {
+=======
+    public void addRecord(Plate plate){
+
+>>>>>>> 0d562d7defde7bf741225ff3d9bad34e9be03309
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Neue Platte designen = 1; Vorhandene einsetzten = 2");
         int desideWhichWay = scanner.nextInt();
 
+<<<<<<< HEAD
         if (desideWhichWay == 1) {
             Plate selfDesign = designNewPlate(scanner);
             plates.add(selfDesign);
@@ -29,12 +35,31 @@ public class Magazin {
             plates.add(plate);
             getPlateInfo(plate);
         } else {
+=======
+        if(desideWhichWay == 1){
+            System.out.println("Wie viele Titel hat die Platte?");
+            int amountOfTitles = scanner.nextInt();
+
+            for (int i = 0; i < amountOfTitles; i++) {
+                System.out.println("Name");
+                String nameOfTitle = scanner.next();
+                System.out.println("Länge");
+                double lenghtOfTitle = scanner.nextInt();
+                Title title = new Title(nameOfTitle,lenghtOfTitle);
+                plate.addTitle(title);
+            }
+            plates.add(plate);
+        }else if (desideWhichWay == 2){
+            plates.add(plate);
+        }else{
+>>>>>>> 0d562d7defde7bf741225ff3d9bad34e9be03309
             System.out.println("Fehler");
             return;
         }
 
     }
 
+<<<<<<< HEAD
     public void removePlate(Plate plate) {
         plates.remove(plate);
         System.out.println("Platte wurde gelöscht oder nicht gefunden.");
@@ -86,3 +111,8 @@ public class Magazin {
         return selfDesign;
     }
 }
+=======
+
+
+}
+>>>>>>> 0d562d7defde7bf741225ff3d9bad34e9be03309

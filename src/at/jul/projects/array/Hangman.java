@@ -1,6 +1,5 @@
 package at.jul.projects.array;
 
-
 import java.util.Random;
 import java.util.Scanner;
 
@@ -8,10 +7,7 @@ public class Hangman {
     public static void main(String[] args) {
         String[] wordsToPlayWith = {"Julian", "Hilfe", "Manuel","Milian", "Jonathan", "Serkan"};
         int numberToChooseWord = getRandomNumber(wordsToPlayWith);
-        char guessOfThePlayer = getInputToGuessWord();
-
-
-
+        String guessOfThePlayer = getInputToGuessWord();
 
 
     }
@@ -21,11 +17,12 @@ public class Hangman {
         System.out.println(numberToChooseWord);
         return numberToChooseWord;
     }
-    private static char getInputToGuessWord(){
+    private static String getInputToGuessWord(){
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Geben sie ihren Buchstaben ein den sie raten möchten.");
-        char inputForGuessingWord = scanner.next().charAt(0);
+        String inputForGuessingWord = scanner.next();
+
         return inputForGuessingWord;
     }
 
