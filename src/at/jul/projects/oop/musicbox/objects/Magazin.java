@@ -1,5 +1,7 @@
 package at.jul.projects.oop.musicbox.objects;
 
+import at.jul.projects.oop.musicbox.exceptions.MagazineFullException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,9 +18,11 @@ public class Magazin {
         this.plates = new ArrayList<>();
     }
 
-    public void addRecord(Plate plate){
+    public void addRecord(Plate plate) throws MagazineFullException {
         if(plates.size() >2){
-            System.out.println("Magazin ist voll");
+           // System.out.println("Magazin ist voll");
+            throw new MagazineFullException("Magazin ist voll",1);
+
         }else{
             plates.add(plate);
             System.out.println("Anzahl an Platten im Magazin: " + plates.size());

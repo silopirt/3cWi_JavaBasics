@@ -1,5 +1,6 @@
 package at.jul.projects.oop.musicbox;
 
+import at.jul.projects.oop.musicbox.exceptions.MagazineFullException;
 import at.jul.projects.oop.musicbox.objects.*;
 
 public class MusicboxMain {
@@ -19,8 +20,14 @@ public class MusicboxMain {
         eminem.addTitle(eminemLoseYourself);
         eminem.addTitle(eminemTillICollapse);
 
-        magazin.addRecord(eminem);
-        magazin.addRecord(tupac);
+        try {
+            magazin.addRecord(eminem);
+            magazin.addRecord(tupac);
+            magazin.addRecord(tupac);
+            magazin.addRecord(tupac);
+        } catch (MagazineFullException e) {
+            System.out.println("Magazin ist voll" + e.getMessage() + "."+ e.getCode());
+        }
 
         player.loadRecord(eminem);
 
