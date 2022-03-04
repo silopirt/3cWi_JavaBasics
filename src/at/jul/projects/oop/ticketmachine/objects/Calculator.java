@@ -1,8 +1,6 @@
-package at.jul.projects.oop.ticketMachine.objects;
+package at.jul.projects.oop.ticketmachine.objects;
 
-import at.jul.projects.oop.ticketMachine.objects.ticketmanagero.Ticket;
-
-import java.text.DecimalFormat;
+import at.jul.projects.oop.ticketmachine.objects.ticketmanagero.Ticket;
 
 public class Calculator {
     private String id;

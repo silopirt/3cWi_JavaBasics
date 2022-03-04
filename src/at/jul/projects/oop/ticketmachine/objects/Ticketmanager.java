@@ -1,18 +1,15 @@
-package at.jul.projects.oop.ticketMachine.objects;
+package at.jul.projects.oop.ticketmachine.objects;
 
-import at.jul.projects.oop.ticketMachine.objects.ticketmanagero.Ticket;
+import at.jul.projects.oop.ticketmachine.objects.ticketmanagero.Ticket;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Ticketmanager {
     private List<Ticket> tickets;
     private Calculator calculator;
-    private Printer printer;
 
-    public Ticketmanager(Calculator calculator, Printer printer) {
-        this.printer = printer;
+    public Ticketmanager(Calculator calculator) {
         this.calculator = calculator;
         this.tickets = new ArrayList<>();
     }

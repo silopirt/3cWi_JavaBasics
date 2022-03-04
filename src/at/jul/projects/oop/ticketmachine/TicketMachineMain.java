@@ -1,12 +1,11 @@
-package at.jul.projects.oop.ticketMachine;
+package at.jul.projects.oop.ticketmachine;
 
-import at.jul.projects.oop.ticketMachine.objects.*;
+import at.jul.projects.oop.ticketmachine.objects.*;
 
 public class TicketMachineMain {
     public static void main(String[] args) {
-        Printer printer = new Printer("printer");
         Calculator calc = new Calculator("calc");
-        Ticketmanager manager = new Ticketmanager(calc, printer);
+        Ticketmanager manager = new Ticketmanager(calc);
 
         manager.createTicket();
         manager.getTimeDifference(1);

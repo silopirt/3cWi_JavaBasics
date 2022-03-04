@@ -1,4 +1,4 @@
-package at.jul.projects.oop.ticketMachine.objects.ticketmanagero;
+package at.jul.projects.oop.ticketmachine.objects.ticketmanagero;
 
 
 import java.util.Date;
