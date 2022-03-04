@@ -23,11 +23,17 @@ public class Ticketmanager {
         System.out.println(tickets.size());
     }
 
-    public void payTicket(int ticketID){
+    public double getMoneyFromTicket(int ticketID){
+        double calculatedMoney = 0;
         for (int i = 0; i < tickets.size(); i++) {
             if(tickets.get(i).getId() == ticketID){
-                calculator.chargeMoney(tickets.get(i).ticketTimeDiff());
+                calculatedMoney = calculator.chargeMoney(tickets.get(i).getDateWhenPrinted(),tickets.get(i).getDateWhenPaid());
             }
         }
+        return calculatedMoney;
+    }
+
+    public void payTicket(double moneyToPay){
+
     }
 }

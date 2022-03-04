@@ -16,13 +16,14 @@ public class TicketMachineMain {
 
         while(true) {
             Scanner scanner = new Scanner(System.in);
+            System.out.println("1, 2 oder 3");
             int usage = scanner.nextInt();
             if (usage == 1) {
                 manager.createTicket();
                 manager.createTicket();
                 manager.createTicket();
             } else if (usage == 2) {
-                manager.payTicket(2);
+                System.out.println("Sie müssen " + manager.getMoneyFromTicket(2) + " Euro zahlen");
             }else if(usage == 3){
                 return;
             }

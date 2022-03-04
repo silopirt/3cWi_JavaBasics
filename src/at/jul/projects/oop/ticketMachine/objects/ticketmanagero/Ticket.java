@@ -12,6 +12,16 @@ public class Ticket {
         this.id = id;
         this.dateWhenPrinted = new Date();
     }
+
+    public long getDateWhenPrinted() {
+        return dateWhenPrinted.getTime();
+    }
+
+    public long getDateWhenPaid() {
+        dateWhenPaid = new Date();
+        return dateWhenPaid.getTime();
+    }
+
     public long ticketTimeDiff(){
         dateWhenPaid = new Date();
 

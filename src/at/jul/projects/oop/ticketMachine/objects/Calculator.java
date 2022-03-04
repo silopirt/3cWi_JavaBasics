@@ -7,11 +7,13 @@ public class Calculator {
         this.id = id;
     }
 
-    public double chargeMoney(long time){
-        long differenceSec = (time/1000);
+    public double chargeMoney(long timeWhenPrinted, long timeWhenPaid){
+        long differenceSec = timeWhenPaid-timeWhenPrinted;
+
+        double timeToCalc = (differenceSec/1000);
         double moneyPerSec = 0.01;
 
-        double moneyWhichMustBePaid = differenceSec * moneyPerSec;
-        return moneyWhichMustBePaid;
+        return timeToCalc*moneyPerSec;
     }
+
 }
