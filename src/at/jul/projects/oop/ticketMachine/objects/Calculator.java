@@ -1,5 +1,9 @@
 package at.jul.projects.oop.ticketMachine.objects;
 
+import at.jul.projects.oop.ticketMachine.objects.ticketmanagero.Ticket;
+
+import java.text.DecimalFormat;
+
 public class Calculator {
     private String id;
 
@@ -7,13 +11,12 @@ public class Calculator {
         this.id = id;
     }
 
-    public double chargeMoney(long timeWhenPrinted, long timeWhenPaid){
-        long differenceSec = timeWhenPaid-timeWhenPrinted;
-
-        double timeToCalc = (differenceSec/1000);
+    public double chargeMoney(Ticket ticket){
         double moneyPerSec = 0.01;
+        double moneyPay = (ticket.ticketTimeDiff()*moneyPerSec);
 
-        return timeToCalc*moneyPerSec;
+
+        return moneyPay;
     }
 
 }
