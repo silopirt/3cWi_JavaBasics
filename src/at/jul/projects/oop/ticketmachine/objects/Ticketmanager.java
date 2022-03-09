@@ -18,16 +18,19 @@ public class Ticketmanager {
         Ticket ticket = new Ticket(tickets.size()+1);
 
         tickets.add(ticket);
+        System.out.println(tickets.size());
     }
 
-    public void removeTicket(int tickerIDNumber){
+    private void removeTicket(int tickerIDNumber){
         tickets.remove(searchForTicket(tickerIDNumber));
     }
 
-    public void getTimeDifference(int tickerIDNumber){
+    public void payAndRemoveTicket(int tickerIDNumber){
         Ticket ticketTimeDifference = searchForTicket(tickerIDNumber);
 
-        System.out.println(calculator.chargeMoney(ticketTimeDifference));
+        calculator.payTicket(calculator.chargeMoney(ticketTimeDifference));
+
+        removeTicket(tickerIDNumber);
     }
 
 
