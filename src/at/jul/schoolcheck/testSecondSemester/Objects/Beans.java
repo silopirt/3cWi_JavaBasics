@@ -2,10 +2,10 @@ package at.jul.schoolcheck.testSecondSemester.Objects;
 
 import java.util.Scanner;
 
-public class Bones {
+public class Beans {
     private int volumeOfBonesTank;
 
-    public Bones(int volumeOfBonesTank) {
+    public Beans(int volumeOfBonesTank) {
         int maxVol = 100;
         if(volumeOfBonesTank >maxVol) {
             System.out.println("Tank kann nur 100g fassen");

@@ -5,12 +5,12 @@ import java.util.Scanner;
 public class Controll {
     private String status;
     private Watertank tank;
-    private Bones coffeeBones;
+    private Beans coffeeBeans;
 
-    public Controll(Watertank tank, Bones coffeeBones) {
+    public Controll(Watertank tank, Beans coffeeBeans) {
         this.status = "OFF";
         this.tank = tank;
-        this.coffeeBones = coffeeBones;
+        this.coffeeBeans = coffeeBeans;
     }
 
     private void turnOnMachine(){
@@ -36,10 +36,10 @@ public class Controll {
             return 0;
         }
         if (howMuchBones>0 &&howMuchBones <=10){
-            if(howMuchBones> coffeeBones.getVolumeOfBonesTank()){
+            if(howMuchBones> coffeeBeans.getVolumeOfBonesTank()){
                 System.out.println("Musst den Tank auffüllen");
                 int fillUpTank=scanner.nextInt();
-                coffeeBones.fillBonesTank(fillUpTank);
+                coffeeBeans.fillBonesTank(fillUpTank);
             }
             for (int i = 1; i < 11; i++) {
                 if(howMuchBones==i){
@@ -82,7 +82,7 @@ public class Controll {
             makeCoffee();
         }else {
             System.out.println("Ihr Kaffee hat " + water + "ml Wasser und " + bones + "g Bohnen");
-            coffeeBones.setVolumeOfBonesTank(bones);
+            coffeeBeans.setVolumeOfBonesTank(bones);
             tank.setVolumeOfTank(water);
         }
     }

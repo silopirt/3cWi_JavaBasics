@@ -1,6 +1,6 @@
 package at.jul.schoolcheck.testSecondSemester;
 
-import at.jul.schoolcheck.testSecondSemester.Objects.Bones;
+import at.jul.schoolcheck.testSecondSemester.Objects.Beans;
 import at.jul.schoolcheck.testSecondSemester.Objects.Controll;
 import at.jul.schoolcheck.testSecondSemester.Objects.Watertank;
 
@@ -9,8 +9,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Watertank watertank = new Watertank(1000);
-        Bones bones = new Bones(100);
-        Controll controll = new Controll(watertank,bones);
+        Beans beans = new Beans(100);
+        Controll controll = new Controll(watertank, beans);
 
         while(true){
             Scanner scanner = new Scanner(System.in);
